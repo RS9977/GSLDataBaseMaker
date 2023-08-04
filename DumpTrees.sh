@@ -7,7 +7,7 @@ SOURCE_DIR="./"
 compile_with_ssa_dump() {
     local source_file="$1"
     local output_file="$(basename "$source_file" .c).o"
-    gcc -c -fdump-tree-ssa "$source_file" -o "$output_file"
+    gcc -c -fdump-tree-ssa-gimple "$source_file" -o "$output_file"
 }
 
 # Loop through all C source files in the directory and compile them with -fdump-tree-ssa
