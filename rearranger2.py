@@ -44,9 +44,10 @@ def process_files_in_directory(input_dir):
         for file in files:
             if file.endswith(".c"):
                 input_c_file = os.path.join(root, file)
-                output_c_file = input_c_file[:-2] + "2.c"
-                rearrange_code(input_c_file, output_c_file)
-                print(f"Processed: {input_c_file} => {output_c_file}")
+                if '__1.c' not in input_c_file:
+                    output_c_file = input_c_file[:-2] + "__2.c"
+                    rearrange_code(input_c_file, output_c_file)
+                    print(f"Processed: {input_c_file} => {output_c_file}")
 
 if __name__ == "__main__":
     input_directory = "./"  # Replace with the path to the directory containing your C code files

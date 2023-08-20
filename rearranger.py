@@ -30,7 +30,7 @@ def process_files_in_directory(input_dir):
         for file in files:
             if file.endswith(".c"):
                 input_c_file = os.path.join(root, file)
-                output_c_file = input_c_file[:-2] + "1.c"
+                output_c_file = input_c_file[:-2] + "__1.c"
                 rearrange_code(input_c_file, output_c_file)
                 print(f"Processed: {input_c_file} => {output_c_file}")
 
